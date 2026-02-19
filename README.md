@@ -5,7 +5,7 @@
 ![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![ML](https://img.shields.io/badge/Scikit--Learn-ML-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
 ![DL](https://img.shields.io/badge/Deep%20Learning-DL-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+
 
 **A robust ML/DL framework for predicting flood probability and occurrence across India using environmental, hydrological, and infrastructural data.**
 
@@ -555,12 +555,4 @@ GitHub: [@BVPKARTHIKEYA](https://github.com/BVPKARTHIKEYA)
 
 ---
 
-## 📄 License
 
-This project is licensed under the MIT License.
-
----
-
-## 🙏 Acknowledgements
-
-Dataset represents simulated flood event data across India, incorporating real-world geographic coordinates and environmental parameters to model realistic flood-prone conditions across diverse terrain, soil types, and land cover categories.
