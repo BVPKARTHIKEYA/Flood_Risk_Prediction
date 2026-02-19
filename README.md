@@ -85,7 +85,7 @@ This project uses two separate datasets — a smaller curated dataset for EDA an
 
 | Property | Detail |
 |---|---|
-| Target variable | ❌ Not included (unlabelled) |
+| Target variable | Flood Probability |
 | Purpose | Generating predictions for `submission.csv` |
 | Format | Same features as `train.csv`, no `Flood Occurred` column |
 
