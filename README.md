@@ -36,10 +36,10 @@ The pipeline covers:
 ```
 Flood_Risk_Prediction/
 │
-├── flood_risk_dataset_india.csv   # Primary dataset (10,000 samples)
+├── flood_risk_dataset_india.csv   # Primary EDA dataset (10,000 samples)
 ├── flood.csv                      # Alternate/supplementary flood data
-├── train.csv                      # Training split
-├── test.csv                       # Test split
+├── train.csv                      # Training split (11,08,895 samples)
+├── test.csv                       # Test split (unlabelled, for submission)
 ├── sample_submission.csv          # Submission format template
 ├── submission.csv                 # Generated model predictions
 │
@@ -56,6 +56,10 @@ Flood_Risk_Prediction/
 
 ## 📊 Dataset
 
+This project uses two separate datasets — a smaller curated dataset for EDA and a large-scale dataset for model training and evaluation.
+
+### 🔬 EDA Dataset — `flood_risk_dataset_india.csv`
+
 | Property | Detail |
 |---|---|
 | Total samples | 10,000 |
@@ -64,6 +68,30 @@ Flood_Risk_Prediction/
 | Geographic scope | India (Lat: 8°–37°N, Lon: 68°–97°E) |
 | Target variable | `Flood Occurred` (binary: 0 = No Flood, 1 = Flood) |
 | Class balance | ✅ Near-perfect — no resampling needed |
+| Purpose | Exploratory analysis, feature engineering, PCA |
+
+### 🏋️ Training Dataset — `train.csv`
+
+| Property | Detail |
+|---|---|
+| Total samples | **11,08,895** (~1.1 million rows) |
+| Target variable | `Flood Occurred` (binary: 0 = No Flood, 1 = Flood) |
+| Purpose | Full-scale model training and validation |
+| Scale | Large-scale dataset enabling robust generalization |
+
+> With over **1.1 million samples**, `train.csv` provides the volume needed to train deep learning models and ensemble methods at production scale, significantly reducing overfitting risk compared to the smaller EDA dataset.
+
+### 🧪 Test Dataset — `test.csv`
+
+| Property | Detail |
+|---|---|
+| Target variable | ❌ Not included (unlabelled) |
+| Purpose | Generating predictions for `submission.csv` |
+| Format | Same features as `train.csv`, no `Flood Occurred` column |
+
+> Predictions generated on `test.csv` are saved to `submission.csv` following the format defined in `sample_submission.csv`.
+
+---
 
 ### Input Features
 
@@ -80,7 +108,7 @@ Flood_Risk_Prediction/
 
 ## 🔍 Exploratory Data Analysis
 
-A comprehensive EDA was conducted across all features:
+A comprehensive EDA was conducted on `flood_risk_dataset_india.csv` across all features:
 
 **Class Distribution**
 The target variable is nearly perfectly balanced (50.6% No Flood / 49.4% Flood), confirming that standard accuracy metrics are valid without class-weighting adjustments.
@@ -92,7 +120,7 @@ Histogram plots by flood class reveal heavily overlapping distributions across a
 Feature medians and interquartile ranges are near-identical between flood and no-flood classes, further confirming the dataset's complexity and the need for non-linear models.
 
 **Correlation Heatmap**
-Pairwise correlations between all features are extremely low (max ~0.03), confirming minimal multicollinearity and that the data is information-rich across independent dimensions.
+Pairwise correlations between all features are extremely low (max ~0.03), confirming minimal multicollinearity and that features contribute independently.
 
 **Categorical Features**
 Land Cover (Agricultural, Desert, Forest, Urban, Water Body) and Soil Type (Clay, Loam, Peat, Sandy, Silt) show near-uniform flood rates (~49–52%) across all categories — individual categorical features carry minimal discriminative power alone.
