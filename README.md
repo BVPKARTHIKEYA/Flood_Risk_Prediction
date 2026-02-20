@@ -640,13 +640,6 @@ See `requirements.txt` for exact pinned versions.
 GitHub: [@BVPKARTHIKEYA](https://github.com/BVPKARTHIKEYA)
 
 ---
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
----
-
 ## 🙏 Acknowledgements
 
 Dataset represents simulated flood event data across India, incorporating real-world geographic coordinates and environmental parameters to model realistic flood-prone conditions across diverse terrain, soil types, and land cover categories.
