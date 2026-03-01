@@ -1,8 +1,5 @@
 # 🌊 Flood Risk Prediction
-<img width="1202" height="655" alt="image" src="https://github.com/user-attachments/assets/2e0711a7-4807-4664-b896-33e118b79a91" />
-
 <div align="center">
-
 ![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
 ![XGBoost](https://img.shields.io/badge/XGBoost-Gradient%20Boosting-EC6C00?style=for-the-badge&logo=xgboost&logoColor=white)
@@ -563,7 +560,7 @@ As demonstrated in the **Flood Probability Distribution** plot in the EDA sectio
 
  
  ### LLM EVALUATIONS
- ![Uploading image.png…]()
+<img width="1202" height="655" alt="image" src="https://github.com/user-attachments/assets/2e0711a7-4807-4664-b896-33e118b79a91" />
 
 
 ### Improving Future Submissions
