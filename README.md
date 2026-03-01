@@ -1,5 +1,5 @@
 # 🌊 Flood Risk Prediction
-![Uploading image.png…]()
+<img width="1202" height="655" alt="image" src="https://github.com/user-attachments/assets/2e0711a7-4807-4664-b896-33e118b79a91" />
 
 <div align="center">
 
@@ -561,6 +561,11 @@ As demonstrated in the **Flood Probability Distribution** plot in the EDA sectio
 
 > ⚠️ **Important:** Given the model's near-random discriminative ability (ROC-AUC ~0.50), these thresholds should be treated as **preliminary indicators only** and not relied upon for life-safety decisions without integration of richer, real-time data sources.
 
+ 
+ ### LLM EVALUATIONS
+ ![Uploading image.png…]()
+
+
 ### Improving Future Submissions
 
 To produce more confident and actionable predictions in future iterations, the following data enrichments are recommended:
@@ -569,6 +574,7 @@ To produce more confident and actionable predictions in future iterations, the f
 - **Real-time river gauge readings** — hourly/daily discharge measurements
 - **Topographic wetness index** — derived from Digital Elevation Model (DEM) data
 - **Monsoon seasonality flags** — month-of-year encoding, IMD rainfall zone labels
+
 
 ---
 
