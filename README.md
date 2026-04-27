@@ -189,9 +189,9 @@ Six engineered features were created to capture interaction effects and non-line
 
 | Metric | Best Model | Score |
 |---|---|---|
-| **Composite Score** | Shallow DNN | 0.5410 |
-| **F1-Score** | Shallow DNN | 0.5813 |
-| **Recall** | Shallow DNN | 0.6733 |
+| **Composite Score** | LSTM | 0.5410 |
+| **F1-Score** | LSTM | 0.5813 |
+| **Recall** | LSTM | 0.6733 |
 | **Accuracy** | Logistic Regression | 0.509 |
 | **ROC-AUC** | Naive Bayes / LightGBM / MLP | 0.503 |
 | **R² (Regression)** | Linear Regression | ~0.84 |
@@ -200,8 +200,8 @@ Six engineered features were created to capture interaction effects and non-line
 
 | Rank | Model | Composite Score |
 |---|---|---|
-| 🥇 1 | Shallow DNN | 0.5410 |
-| 🥈 2 | LSTM | 0.5291 |
+| 🥇 1 | LSTM | 0.5410 |
+| 🥈 2 | LIGHTGBM | 0.5291 |
 | 🥉 3 | MLP sklearn | 0.5203 |
 | 4 | LightGBM | 0.5201 |
 | 5 | Random Forest | ~0.50 |
@@ -346,26 +346,7 @@ Strikingly different rankings across Random Forest, XGBoost, and LightGBM — no
 
 ---
 
-#### Model × Metric Heatmap
-![Model Metric Heatmap](https://github.com/user-attachments/assets/d6e0d826-1c39-402c-ab9a-02e414306c85)
 
-A **uniformly dark blue band (~0.49–0.51)** spans Accuracy, Precision, ROC-AUC, and PR-AUC across virtually all 23 models. The Recall and F1 rows show the greatest variance.
-
----
-
-#### Best Model Deep Analysis — Shallow DNN
-![Best Model Analysis](https://github.com/user-attachments/assets/0d876a69-781a-44ae-842f-bfeafd0c5f18)
-
-Shallow DNN leads with composite score **0.5306**, but ROC-AUC (0.5006) barely above random — it maximises flood detection via class over-prediction rather than genuine discrimination.
-
----
-
-#### All Models — Composite Score Ranking
-![Composite Score Ranking](https://github.com/user-attachments/assets/aefe2863-e6b6-4e8a-a36d-68562557f9ee)
-
-Shallow DNN (0.5410) leads all 23 models by a clear margin. **16 of 23 models cluster within 0.49–0.52** — confirming no architectural choice provides a decisive advantage.
-
----
 
 ### Part 2 — Training Dataset EDA (1,108,895 samples)
 
@@ -381,21 +362,7 @@ Near-perfect bell curve **tightly centred around 0.50** (range: 0.40–0.60). Th
 
 Predictions cluster in a **compressed band of 0.30–0.75** regardless of actual values — the model systematically pulls predictions toward the centre due to insufficient discriminative signal.
 
----
 
-#### Residual Distribution
-![Residual Distribution](https://github.com/user-attachments/assets/e53dca68-86f3-4de2-a8b2-d1bdd692ed34)
-
-Sharply peaked, **right-skewed distribution centred near zero** — the model more frequently under-predicts flood probability, with non-random structured errors indicating missed high-probability subsets.
-
----
-
-#### Prediction Error Plot
-![Prediction Error Plot](https://github.com/user-attachments/assets/8d2459da-b64f-4ddb-8dc4-b435827e9f73)
-
-**Fan-shaped (heteroscedastic) pattern** — errors tightest at low predictions (±0.02), widening to ±0.10 near 0.50–0.60 where most samples concentrate.
-
----
 
 #### Regression Model Performance
 ![Model Performance Comparison](https://github.com/user-attachments/assets/219c44ac-32b3-47e2-a1dd-547f48b896ae)
@@ -413,7 +380,7 @@ Sharply peaked, **right-skewed distribution centred near zero** — the model mo
 
 ## 📤 Submission
 
-`submission.csv` contains flood probability predictions from the best model (Shallow DNN) on the unlabelled `test.csv`, formatted per `sample_submission.csv`.
+`submission.csv` contains flood probability predictions from the best model (LSTM) on the unlabelled `test.csv`, formatted per `sample_submission.csv`.
 
 ### File Format
 
